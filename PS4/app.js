@@ -1,16 +1,16 @@
-let createError = require('http-errors');
-let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-let ps4Router   = require('./routes/ps4');
-let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
+const ps4Router   = require('./routes/ps4');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-let weatherConfig = require('./config/api_config.js')
+const weatherConfig = require('./config/api_config.js')
 
-let app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -15,7 +15,7 @@ router.route('/')
 
         const getWeather = async (key) => {
             const returnValueRaw = await fetch(options.url);
-            const returnValue = await returnValueRaw.json();
+            let returnValue = await returnValueRaw.json();
             returnValue = returnValue.list[0].weather[0].main;
             console.log(returnValue)
             return returnValue;

@@ -1,0 +1,10 @@
+<form [formGroup]="location" (ngSubmit)="getWeather()">
+  <input type="text" formControlName="city1" required minlength="1"><br/>
+  <button type="submit">Get Weather</button>
+</form>
+
+<div *ngIf="location.get('city1').errors?.minlength">
+  Name must be at least 1 characters long.
+</div>
+
+<app-display>[weather]="weather"</app-display>

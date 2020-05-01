@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { apiService } from './services/api.service';
+import {Observable, of } from 'rxjs';
+
 
 @Component({
   selector: 'app-form',
@@ -12,11 +14,11 @@ export class FormComponent implements OnInit {
   weather: any;
 
   // inject weather service into constructor
-  city1: FormControl = new FormControl('ABC');
+  city1: FormControl = new FormControl('');
 
   location: FormGroup = new FormGroup(
     {
-      city1: new FormControl('ABC'),
+      city1: new FormControl(''),
     }
   );
   wxOptions: {};
@@ -31,8 +33,8 @@ export class FormComponent implements OnInit {
 
     this.wx.getWeather(this.wxOptions).subscribe(
       response => {
+        console.log(response)
         this.weather = response;
-        console.log(this.weather.list[0].weather[0].main);
       }
     );
   }

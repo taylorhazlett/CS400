@@ -1,5 +1,5 @@
 <form [formGroup]="location" (ngSubmit)="getWeather()">
-  <input type="text" formControlName="city1" required minlength="1"><br/>
+  <input type="text" formControlName="city1" required minlength="2"><br/>
   <button type="submit">Get Weather</button>
 </form>
 
@@ -7,4 +7,4 @@
   Name must be at least 1 characters long.
 </div>
 
-<app-display>[weather]="weather"</app-display>
+<app-display [weather]="weather"></app-display>

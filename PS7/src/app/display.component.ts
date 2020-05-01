@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import {Observable} from 'rxjs';
+
 
 @Component({
   selector: 'app-display',
@@ -8,6 +10,7 @@ import { Input } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
   @Input() weather: any;
+
 
   constructor() { }
 

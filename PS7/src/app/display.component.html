@@ -1,5 +1,5 @@
 <div  *ngIf=[weather]>
-  5 Day Forecast:
-  {{weather}}
-  {{weather.list[0].weather[0].main}}
+  3 Hour Weather Fluctuations for the next 5 days:
+  <li *ngFor="let i of weather.list">{{i.weather[0].main}}</li>
+
 </div>
